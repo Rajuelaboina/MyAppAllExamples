@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Area Calculator</string>
+    <string name="length2">Length 2:</string>
+    <string name="length1">Length 1:</string>
+    <string name="enter">Enter a Value</string>
+    <string name="triangle">Triangle</string>
+    <string name="circle">Circle</string>
+    <string name="square">Square</string>
+    <string name="select">Select a Shape</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+    <string name="clear">Clear</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="google_maps_key">AIzaSyCeguW2kOE2_6vd0Izuk6jly_GrwhfJ9SA</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+
+</resources>
