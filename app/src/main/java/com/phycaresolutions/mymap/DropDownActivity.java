@@ -1,11 +1,14 @@
 package com.phycaresolutions.mymap;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RadioGroup;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,5 +55,18 @@ public class DropDownActivity extends AppCompatActivity {
                 binding.textInputLayout.setStartIconDrawable(string.getImageResource());
             }
         });
+      /* binding.radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+           @SuppressLint("NonConstantResourceId")
+           @Override
+           public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+           }
+       });*/
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
