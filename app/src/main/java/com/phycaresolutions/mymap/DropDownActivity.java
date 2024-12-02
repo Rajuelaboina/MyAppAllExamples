@@ -18,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.phycaresolutions.mymap.databinding.ActivityDropDownBinding;
 import com.phycaresolutions.mymap.databinding.ActivityMaps3Binding;
+import com.phycaresolutions.mymap.db.UserDataBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,9 @@ public class DropDownActivity extends AppCompatActivity {
 
            }
        });*/
+        UserDataBase dataBase = new UserDataBase(getApplicationContext());
+        long ll =dataBase.insertData(new ItemClass(R.layout.layout_one, "Item Type 1"));
+        Log.e("DBDBBDB","DB>>> "+ll);
     }
 
     @Override

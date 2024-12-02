@@ -13,6 +13,8 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_maps_key">AIzaSyCeguW2kOE2_6vd0Izuk6jly_GrwhfJ9SA</string>
     <string name="title_activity_home">HomeActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
