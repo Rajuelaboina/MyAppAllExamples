@@ -66,3 +66,6 @@ public class BottomTestActivity extends AppCompatActivity {
 
     }*/
 }
+
+/*
+https://reactnavigation.org/docs/getting-started*/

@@ -65,7 +65,7 @@ public class NotificationFragment extends Fragment implements MenuProvider {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 
     @Override
