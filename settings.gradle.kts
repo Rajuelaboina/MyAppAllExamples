@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyMap"
 include(":app")
 
- 
+include(":lib")

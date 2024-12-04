@@ -62,6 +62,8 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
@@ -84,4 +86,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.11.0:")
     //implementation (files('libs/loginwithlinkedin-release.aar'))
   //  implementation("com.github.Mindinventory:LinkedInLogin:*.*.*")
+
+    // amazon
 }
