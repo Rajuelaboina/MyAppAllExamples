@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.map;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
@@ -18,6 +18,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.databinding.ActivityMapsBinding;
 
 import java.util.ArrayList;

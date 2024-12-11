@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.map;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

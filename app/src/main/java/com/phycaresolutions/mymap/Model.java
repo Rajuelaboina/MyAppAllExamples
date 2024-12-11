@@ -1,9 +1,9 @@
 package com.phycaresolutions.mymap;
 
 public class Model {
-    int type;
-    int id;
-    String text;
+    public int type;
+    public int id;
+    public String text;
     public static final int TEXT_TYPE = 1;
     public static final int IMAGE_TYPE = 2;
     public static final int AUDIO_TYPE = 3;

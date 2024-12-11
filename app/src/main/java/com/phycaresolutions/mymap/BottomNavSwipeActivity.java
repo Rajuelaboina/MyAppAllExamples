@@ -3,17 +3,14 @@ package com.phycaresolutions.mymap;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.phycaresolutions.mymap.adapter.ViewPagerAdapter;
 
 public class BottomNavSwipeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView navigationView;
@@ -69,7 +66,7 @@ public class BottomNavSwipeActivity extends AppCompatActivity implements BottomN
             viewPager.setCurrentItem(1);
             //fragment = new DashBoardFragment();
         }else if ( menuItem.getItemId() == R.id.nav_notification) {
-            viewPager.setCurrentItem(0);
+            viewPager.setCurrentItem(2);
          //   fragment = new NotificationFragment();
         }
 

@@ -1,12 +1,13 @@
-package com.phycaresolutions.mymap;
-
-import android.view.View;
+package com.phycaresolutions.mymap.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
+
+import com.phycaresolutions.mymap.userfragmnet.DashBoardFragment;
+import com.phycaresolutions.mymap.userfragmnet.HomeFragment;
+import com.phycaresolutions.mymap.userfragmnet.NotificationFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 

@@ -1,28 +1,21 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.map;
 
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.Projection;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.phycaresolutions.mymap.databinding.ActivityMaps3Binding;
-import com.phycaresolutions.mymap.databinding.ActivityMapsBinding;
+import com.phycaresolutions.mymap.R;
 
 import java.util.ArrayList;
 import java.util.List;

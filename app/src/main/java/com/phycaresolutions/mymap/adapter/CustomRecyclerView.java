@@ -1,10 +1,9 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.adapter;
 
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,8 +12,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.phycaresolutions.mymap.Model;
+import com.phycaresolutions.mymap.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder>{

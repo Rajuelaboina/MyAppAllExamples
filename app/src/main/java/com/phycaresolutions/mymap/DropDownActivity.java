@@ -1,23 +1,15 @@
 package com.phycaresolutions.mymap;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.RadioGroup;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.phycaresolutions.mymap.adapter.UserAdapter2;
 import com.phycaresolutions.mymap.databinding.ActivityDropDownBinding;
-import com.phycaresolutions.mymap.databinding.ActivityMaps3Binding;
 import com.phycaresolutions.mymap.db.UserDataBase;
 
 import java.util.ArrayList;

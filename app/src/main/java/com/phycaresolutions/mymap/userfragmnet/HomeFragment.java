@@ -1,6 +1,13 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.userfragmnet;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.MenuProvider;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,19 +16,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuProvider;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
+import com.phycaresolutions.mymap.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
+ * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileFragment extends Fragment implements MenuProvider {
+public class HomeFragment extends Fragment implements MenuProvider {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +34,7 @@ public class ProfileFragment extends Fragment implements MenuProvider {
     private String mParam1;
     private String mParam2;
 
-    public ProfileFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -45,8 +47,8 @@ public class ProfileFragment extends Fragment implements MenuProvider {
      * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,7 +70,7 @@ public class ProfileFragment extends Fragment implements MenuProvider {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
@@ -76,11 +78,9 @@ public class ProfileFragment extends Fragment implements MenuProvider {
         super.onViewCreated(view, savedInstanceState);
         requireActivity().addMenuProvider(this,getViewLifecycleOwner());
         TextView tv = view.findViewById(R.id.txtaction);
-        /*tv.setOnClickListener(v -> {
-         //  Navigation.findNavController(getView()).navigate(R.id.nav_home);
-        });*/
-
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        tv.setOnClickListener(v -> {
+           Navigation.findNavController(getView()).navigate(R.id.nav_profile);
+        });
     }
 
     @Override
@@ -91,12 +91,7 @@ public class ProfileFragment extends Fragment implements MenuProvider {
 
     @Override
     public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-       /* if (menuItem.getItemId() == android.R.id.home){
-           // Navigation.findNavController(getView()).navigate(R.id.nav_home);
-        }*/
-
         return false;
     }
-
 
 }
