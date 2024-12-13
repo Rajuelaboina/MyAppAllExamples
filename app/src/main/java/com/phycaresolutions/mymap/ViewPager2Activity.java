@@ -1,6 +1,9 @@
 package com.phycaresolutions.mymap;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.phycaresolutions.mymap.utility.CheckNetWork;
 
 import java.util.ArrayList;
 
@@ -29,11 +33,11 @@ public class ViewPager2Activity extends AppCompatActivity {
         /*arrayList.add("https://reqres.in/img/faces/1-image.jpg");
         arrayList.add("https://reqres.in/img/faces/1-image.jpg");
         arrayList.add("https://reqres.in/img/faces/1-image.jpg");*/
-        arrayList.add(R.drawable.img);
+        arrayList.add(R.drawable.doctor);
         arrayList.add(R.drawable.doctor);
         arrayList.add(R.drawable.dashboard_24);
         arrayList.add(R.drawable.baseline_account_circle_24);
-        arrayList.add(R.drawable.img);
+        arrayList.add(R.drawable.doctor);
 
         ViewPager2 viewPager2 = findViewById(R.id.view_Pager);
         TabLayout tabLayout = findViewById(R.id.into_tab_layout);
@@ -43,6 +47,11 @@ public class ViewPager2Activity extends AppCompatActivity {
 
         }).attach();
        // tabLayout.setupWithViewPager(viewPager2);
+        if (CheckNetWork.getNetWorkState(getApplicationContext())){
+            Toast.makeText(getApplicationContext(),"Network  available",Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(getApplicationContext(),"Network not available",Toast.LENGTH_LONG).show();
+        }
 
     }
 }
