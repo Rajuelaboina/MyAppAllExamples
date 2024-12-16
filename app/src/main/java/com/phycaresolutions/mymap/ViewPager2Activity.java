@@ -13,11 +13,20 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.gms.common.api.Api;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.phycaresolutions.mymap.restfull.ApiService;
+import com.phycaresolutions.mymap.restfull.Details;
+import com.phycaresolutions.mymap.restfull.ServiceInstance;
 import com.phycaresolutions.mymap.utility.CheckNetWork;
 
 import java.util.ArrayList;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ViewPager2Activity extends AppCompatActivity {
 
@@ -52,6 +61,20 @@ public class ViewPager2Activity extends AppCompatActivity {
         }else {
             Toast.makeText(getApplicationContext(),"Network not available",Toast.LENGTH_LONG).show();
         }
+
+       //ApiService apiService = ServiceInstance.getRetroFitInstance().create(ApiService.class).getAllUsers();
+        Call<Details> call = ServiceInstance.getRetroFitInstance().create(ApiService.class).getAllUsers();
+        call.enqueue(new Callback<Details>() {
+            @Override
+            public void onResponse(Call<Details> call, Response<Details> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Details> call, Throwable t) {
+
+            }
+        });
 
     }
 }

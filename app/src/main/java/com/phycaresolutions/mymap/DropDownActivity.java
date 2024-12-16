@@ -56,8 +56,13 @@ public class DropDownActivity extends AppCompatActivity {
            }
        });*/
         UserDataBase dataBase = new UserDataBase(getApplicationContext());
-        long ll =dataBase.insertData(new ItemClass(R.layout.layout_one, "Item Type 1"));
-        Log.e("DBDBBDB","DB>>> "+ll);
+        if (!dataBase.getIsUserExist("raju","12345")) {
+            long ll = dataBase.insertData(new ItemClass(R.layout.layout_one, "Item Type 1"));
+            Log.e("DBDBBDB","DB>>> "+ll);
+        }
+
+        Log.e("DBDBBDB","Login details >>>>  :  "+ dataBase.getIsUserExist("raju","123"));
+
     }
 
     @Override
