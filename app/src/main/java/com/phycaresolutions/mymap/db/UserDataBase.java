@@ -40,6 +40,7 @@ public class UserDataBase extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         long id = db.insert(TABLE_NAME,null,cv);
         return id;
+
     }
     public boolean getIsUserExist(String name,String password){
         SQLiteDatabase db = getWritableDatabase();

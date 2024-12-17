@@ -5,3 +5,5 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
 }
+val phyVersionCode by extra("")
+val phyApplicationId by extra("phy")

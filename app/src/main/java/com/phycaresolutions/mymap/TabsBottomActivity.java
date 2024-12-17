@@ -59,7 +59,8 @@ public class TabsBottomActivity extends AppCompatActivity {
     }
 }
 /*
-When your app has exited, the coroutine that launched from GlobalScope can still run in the background until the process death (e.g. killed by the operating system)*/
+When your app has exited, the coroutine that launched from GlobalScope
+can still run in the background until the process death (e.g. killed by the operating system)*/
 
 /*
 Model: This layer is responsible for the abstraction of the data sources.
@@ -69,4 +70,13 @@ View: The purpose of this layer is to inform the ViewModel about the user’s ac
  This layer observes the ViewModel and does not contain any kind of application logic.
 
 ViewModel: It exposes those data streams which are relevant to the View. Moreover,
-it serves as a link between the Model and the View .*/
+it serves as a link between the Model and the View .
+
+Remove Duplicates From a List in Kotlin
+1 Using the `toSet()` extension function
+2 Using the `toHashSet()` extension function
+3 Using the `toMutableSet()` extension function
+4 Using the `distinct()` extension function
+
+
+*/

@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# keep all classes in all packages of MyLib module
+# keep all classes in all packages of MyLib module
+-keep class com.phycaresolutions.mymap.*{
+  public protected *;
+
+}
+ # keep also inner classes which are exist in this package or subpackages
+ -keep class com.phycaresolutions.mymap.*$*{
+    public protected*;
+ }
