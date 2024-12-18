@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 
 import com.phycaresolutions.mymap.ItemClass;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDataBase extends SQLiteOpenHelper {
     public  static final String DATABASE_NAME = "user";
     private final String TABLE_NAME = "user";
@@ -25,8 +28,8 @@ public class UserDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-     db.execSQL("CREATE TABLE " + TABLE_NAME + "("+ ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ NAME + " TEXT, "+ PASSWORD + " Text " + ")" );
-
+     //db.execSQL("CREATE TABLE " + TABLE_NAME + "("+ ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ NAME + " TEXT, "+ PASSWORD + " Text " + ")" );
+        db.execSQL("CREATE TABLE " + TABLE_NAME + "(id integer primary key, name text, password text)");
     }
 
     @Override
@@ -68,5 +71,20 @@ public class UserDataBase extends SQLiteOpenHelper {
         }
 
         return bb;
+    }
+    public  List<String> getUserData(){
+        SQLiteDatabase db = getReadableDatabase();
+        String str = "";
+        List<String> list = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        if (cursor.moveToFirst()){
+            do {
+                list.add(cursor.getString(0));
+                list.add(cursor.getString(1));
+                list.add(cursor.getString(2));
+
+            }while (cursor.moveToNext());
+        }
+        return list;
     }
 }

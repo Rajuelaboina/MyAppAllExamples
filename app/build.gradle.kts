@@ -96,8 +96,9 @@ dependencies {
     implementation("com.google.accompanist:accompanist-pager-indicators:0.30.1")
     implementation("com.squareup.retrofit2:retrofit:2.3.0")
     implementation("com.squareup.retrofit2:converter-gson:2.3.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:3.4.1")
-    implementation("com.squareup.okhttp3:okhttps:3.4.1")
+
+   // implementation("com.squareup.okhttp3:logging-interceptor:3.4.1")
+ //   implementation("com.squareup.okhttp3:okhttps:3.4.1")
     implementation("com.google.code.gson:gson:2.11.0:")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     //implementation (files('libs/loginwithlinkedin-release.aar'))

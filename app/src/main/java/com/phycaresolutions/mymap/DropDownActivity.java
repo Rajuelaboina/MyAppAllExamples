@@ -1,22 +1,42 @@
 package com.phycaresolutions.mymap;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.phycaresolutions.mymap.adapter.UserAdapter2;
 import com.phycaresolutions.mymap.databinding.ActivityDropDownBinding;
 import com.phycaresolutions.mymap.db.UserDataBase;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 public class DropDownActivity extends AppCompatActivity {
    ActivityDropDownBinding binding;
+    private static String key = "riakjluVs/@qpUh#";
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +83,55 @@ public class DropDownActivity extends AppCompatActivity {
 
         Log.e("DBDBBDB","Login details >>>>  :  "+ dataBase.getIsUserExist("raju","123"));
 
+        for (String str: dataBase.getUserData()) {
+            Log.e("DBDBBDB","get user Details >>>>  :  "+ str);
+        }
+        try {
+
+          String by = Encrypt("hello world");
+          Log.e("BYTE[]" ,"Byte array : " + by);
+            //Advanced Encryption Standard
+           // Decrypt the ciphertext
+           String dc = Decrypt(by);
+            Log.e("BYTE[]" ,"Byte array : " + dc);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static String Decrypt(String text) throws Exception{
+        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+        byte[] keyBytes= new byte[16];
+        byte[] b= key.getBytes("UTF-8");
+        int len= b.length;
+        if (len > keyBytes.length) len = keyBytes.length;
+        System.arraycopy(b, 0, keyBytes, 0, len);
+        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
+        IvParameterSpec ivSpec = new IvParameterSpec(keyBytes);
+        cipher.init(Cipher.DECRYPT_MODE,keySpec,ivSpec);
+        byte[] raw = Base64.getDecoder().decode(text);
+        byte [] results = cipher.doFinal(raw);
+        return new String(results,"UTF-8");
+    }
+    @SuppressLint("NewApi")
+    public static String Encrypt(String text)throws Exception {
+        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+        byte[] keyBytes= new byte[16];
+        byte[] b= key.getBytes("UTF-8");
+        int len= b.length;
+        if (len > keyBytes.length) len = keyBytes.length;
+        System.arraycopy(b, 0, keyBytes, 0, len);
+        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
+        IvParameterSpec ivSpec = new IvParameterSpec(keyBytes);
+        cipher.init(Cipher.ENCRYPT_MODE,keySpec,ivSpec);
+        byte[] results = cipher.doFinal(text.getBytes("UTF-8"));
+        Base64.Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(results);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
