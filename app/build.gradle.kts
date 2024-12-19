@@ -49,19 +49,25 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-
-   /* productFlavors {
-
-
-        create("phy") {
-            dimension = "phycare"
-            applicationId = "phyApplicationId"
-            applicationIdSuffix = ".phy"
-            versionCode = 1
-            versionName = "phy"
+    flavorDimensions += listOf("free")
+    productFlavors {
+        create("free") {
+            dimension = "free"
         }
     }
-    flavorDimensions += listOf("phycare")*/
+
+    /* productFlavors {
+
+
+         create("phy") {
+             dimension = "phycare"
+             applicationId = "phyApplicationId"
+             applicationIdSuffix = ".phy"
+             versionCode = 1
+             versionName = "phy"
+         }
+     }
+     flavorDimensions += listOf("phycare")*/
 
 }
 
