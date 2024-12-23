@@ -19,6 +19,7 @@ fun main(){
     sample.onItemClick()
 
 
+
     // higher-order function
     val ev:(Int)->Unit = {x:Int-> print(x) }
     //even(2,ev) // this is first way
