@@ -22,6 +22,8 @@ import com.phycaresolutions.mymap.restfull.ServiceInstance;
 import com.phycaresolutions.mymap.utility.CheckNetWork;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -29,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ViewPager2Activity extends AppCompatActivity {
-
+    int currentPage = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,24 @@ public class ViewPager2Activity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout,viewPager2,(tab, position) -> {
 
         }).attach();
+
+        Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if (currentPage == adapter.getItemCount()){
+                    currentPage = 0;
+                }
+                viewPager2.setCurrentItem(currentPage++, true);
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+             handler.post(runnable);
+            }
+        },500,1000);
        // tabLayout.setupWithViewPager(viewPager2);
         if (CheckNetWork.getNetWorkState(getApplicationContext())){
             Toast.makeText(getApplicationContext(),"Network  available",Toast.LENGTH_LONG).show();
