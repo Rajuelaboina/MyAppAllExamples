@@ -1,0 +1,15 @@
+[
+  {
+    "id":1,
+    "title": "Name of the Product name",
+    "price": 109.56,
+    "description": "",
+    "category": "men's clothing",
+    "image": "",
+    "rating": {
+      "rate": 3.9,
+      "count": 120,
+      "url": "https://fakeapi.platzi.com/"
+    }
+  }
+]

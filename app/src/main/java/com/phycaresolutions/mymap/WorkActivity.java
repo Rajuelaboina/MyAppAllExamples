@@ -1,21 +1,45 @@
 package com.phycaresolutions.mymap;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.phycaresolutions.mymap.db.UserDataBase;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -23,14 +47,108 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class WorkActivity extends AppCompatActivity {
-     RecyclerView rc;
+    RecyclerView rc;
     Address address;
+    EditText edname,edPassword;
+    ImageView img1,img2;
+    Button btnLogin;
+    byte[] inputData;
+    private static final int CAMERA_PERMISSION_CODE = 100;
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
-        rc = findViewById(R.id.recyclerView2);
+        edname = findViewById(R.id.editTextText);
+        edPassword = findViewById(R.id.editTextTextPassword);
+        btnLogin = findViewById(R.id.button3);
+        img1 = findViewById(R.id.imageView2);
+        img2 = findViewById(R.id.imageView3);
+        btnLogin.setOnClickListener(v -> {
+            // Sqlite browser for online
+            // https://sqliteviewer.app/#/user/table/user/
+              String name = edname.getText().toString();
+              String password = edPassword.getText().toString();
+              UserDataBase dataBase = new UserDataBase(getApplicationContext());
+
+            if (dataBase.getIsUserExist(name,password)){
+                Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_LONG).show();
+                List<Db_Item> list = dataBase.getUserData2();
+                byte[] bytearray = list.get(0).inputData;
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytearray, 0, bytearray.length);
+                img1.setImageBitmap(bmp);
+            }else {
+                long ll = dataBase.insertData(new Db_Item(name,password,inputData));
+                Log.e("ADAAAAA", "DATA: "+ll);
+                Toast.makeText(getApplicationContext(),"user not fount",Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+
+        img2.setOnClickListener(v->{
+           // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            checkPermission(Manifest.permission.CAMERA,CAMERA_PERMISSION_CODE);
+           /* Intent intent =  new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            someActivityResultLauncher.launch(intent);*/
+
+            /*if (Build.VERSION.SDK_INT > Build.VERSION_CODES.S){
+
+            }*/
+           /* Intent i = new Intent();
+            i.setType("image/*");
+            i.setAction(Intent.ACTION_GET_CONTENT);
+            someActivityResultLauncher.launch(i);*/
+        });
+    }
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Bitmap  theImage = (Bitmap)result.getData().getExtras().get("data");
+                        img1.setImageBitmap(theImage);
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        theImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        inputData = stream.toByteArray();
+                    }
+                }
+            });
+    public void checkPermission(String permission, int requestCode){
+       if( ActivityCompat.checkSelfPermission(getApplicationContext(),permission) == PackageManager.PERMISSION_DENIED){
+           ActivityCompat.requestPermissions(WorkActivity.this,new String[]{permission},requestCode);
+       }else {
+           Toast.makeText(getApplicationContext(),"Permission granted",Toast.LENGTH_LONG).show();
+           opencamera();
+       }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+         if (requestCode == CAMERA_PERMISSION_CODE){
+             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                 Toast.makeText(WorkActivity.this, "Camera Permission Granted", Toast.LENGTH_SHORT) .show();
+                 opencamera();
+             }
+             else {
+                 Toast.makeText(WorkActivity.this, "Camera Permission Denied", Toast.LENGTH_SHORT) .show();
+             }
+         }
+    }
+
+    public void opencamera(){
+        Intent intent =  new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        someActivityResultLauncher.launch(intent);
+    }
+}
+
+
+
+
+
+
+       /* rc = findViewById(R.id.recyclerView2);
         rc.setVisibility(View.VISIBLE);
         List<ItemDetails> list = new ArrayList<>();
 
@@ -72,17 +190,17 @@ public class WorkActivity extends AppCompatActivity {
         rc.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rc.setAdapter(adapter);
 
-        /*ExecutorService executorService = Executors.newSingleThreadExecutor();
+        *//*ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @SuppressLint("MissingPermission")
             @Override
             public void run() {
 
-               *//* try {
+               *//**//* try {
                     Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
-                }*//*
+                }*//**//*
 
 
                 runOnUiThread(new Runnable() {
@@ -92,7 +210,7 @@ public class WorkActivity extends AppCompatActivity {
                     }
                 });
             }
-        });*/
+        });*//*
 
 
 
@@ -109,7 +227,7 @@ public class WorkActivity extends AppCompatActivity {
     }
 
 
-}
+}*/
 // Data storage , Network secyrity,Code , Input validation, Permissions, othe
 // app security Level
 /*

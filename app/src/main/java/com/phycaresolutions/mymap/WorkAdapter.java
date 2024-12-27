@@ -20,14 +20,14 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.MyViewHolder> {
+public class WorkAdapter /*extends RecyclerView.Adapter<WorkAdapter.MyViewHolder>*/ {
     Context mContext;
-    List<WorkActivity.ItemDetails> list;
+    /*List<WorkActivity.ItemDetails> list;
     int qty =0;
-    public WorkAdapter(Context mContext, List<WorkActivity.ItemDetails> list) {
+    *//*public WorkAdapter(Context mContext, List<WorkActivity.ItemDetails> list) {
      this.mContext = mContext;
      this.list = list;
-    }
+    }*//*
 
     @NonNull
     @Override
@@ -47,7 +47,7 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.MyViewHolder> 
         listQun.add(3);
         listQun.add(4);
         listQun.add(5);
-        /*ArrayAdapter adapter = new ArrayAdapter(mContext, android.R.layout.simple_spinner_item,listQun);
+        *//*ArrayAdapter adapter = new ArrayAdapter(mContext, android.R.layout.simple_spinner_item,listQun);
         holder.spinner.setAdapter(adapter);
 
         holder.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -63,7 +63,7 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.MyViewHolder> 
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });*/
+        });*//*
         ArrayAdapter Myadapter = new ArrayAdapter<>(mContext,android.R.layout.simple_spinner_item, listQun);
         Myadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         holder.autoCompleteTextView.setAdapter(Myadapter);
@@ -100,6 +100,6 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.MyViewHolder> 
             autoCompleteTextView = itemView.findViewById(R.id.autoCompleteTextView);
             textInputLayout = itemView.findViewById(R.id.textInputLayout);
         }
-    }
+    }*/
 }
 
