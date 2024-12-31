@@ -73,10 +73,10 @@ public class WorkActivity extends AppCompatActivity {
 
             if (dataBase.getIsUserExist(name,password)){
                 Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_LONG).show();
-                List<Db_Item> list = dataBase.getUserData2();
-                byte[] bytearray = list.get(0).inputData;
+               // List<Db_Item> list = dataBase.getUserData2();
+               /* byte[] bytearray = list.get(0).inputData;
                 Bitmap bmp = BitmapFactory.decodeByteArray(bytearray, 0, bytearray.length);
-                img1.setImageBitmap(bmp);
+                img1.setImageBitmap(bmp);*/
             }else {
                 long ll = dataBase.insertData(new Db_Item(name,password,inputData));
                 Log.e("ADAAAAA", "DATA: "+ll);

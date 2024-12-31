@@ -11,6 +11,10 @@ public class Db_Item  {
         this.inputData = inputData;
     }
 
+    public Db_Item() {
+
+    }
+
     public String getName() {
         return name;
     }

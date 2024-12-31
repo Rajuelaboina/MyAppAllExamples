@@ -111,4 +111,5 @@ dependencies {
   //  implementation("com.github.Mindinventory:LinkedInLogin:*.*.*")
 
     // amazon
+    implementation("com.eftimoff:android-patternview:1.0.6@aar")
 }

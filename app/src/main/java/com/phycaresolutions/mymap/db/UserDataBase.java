@@ -83,7 +83,12 @@ public class UserDataBase extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         if (cursor.moveToFirst()){
             do {
-                list.add(new Db_Item(cursor.getString(1),cursor.getString(2),cursor.getBlob(3)));
+                Db_Item dbItem = new Db_Item();
+                dbItem.setName(cursor.getString(1));
+                dbItem.setPassword(cursor.getString(2));
+                dbItem.setInputData(cursor.getBlob(3));
+                list.add(dbItem);
+               // list.add(new Db_Item(cursor.getString(1),cursor.getString(2),cursor.getBlob(3)));
             }while (cursor.moveToNext());
         }
         return list;
