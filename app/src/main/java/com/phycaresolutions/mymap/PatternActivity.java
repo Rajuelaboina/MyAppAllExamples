@@ -31,3 +31,4 @@ public class PatternActivity extends AppCompatActivity {
 //22  https://github.com/imanshul/ConnectingDotsProblem
 // https://www.google.com/search?q=dot%20joining%20drawing&udm=2&rlz=1C1CHBF_enIN880IN880&hl=en&sa=X&ved=0CCMQtI8BKAJqFwoTCJjZ4tGX0ooDFQAAAAAdAAAAABAQ&biw=1366&bih=641&dpr=1
 // https://github.com/AnjayGoel/dots/tree/master/app/src/main
+// https://github.com/lecho/android_samples/blob/master/connectdots/src/lecho/sample/connectdots/MainActivity.java
