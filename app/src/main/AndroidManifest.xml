@@ -24,7 +24,8 @@
         tools:targetApi="31">
         <activity
             android:name=".PatternActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,13 +93,11 @@
             android:name=".BottomTestActivity"
             android:exported="true">
 
-            <!--
-            <intent-filter>
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
+            </intent-filter>-->
         </activity>
         <!--
 <activity
