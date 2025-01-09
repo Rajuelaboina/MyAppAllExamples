@@ -2,6 +2,10 @@ package com.phycaresolutions.mymap;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -18,6 +22,26 @@ public class PatternActivity extends AppCompatActivity {
        /* ConnectDotsView dotToDotView = new ConnectDotsView(this, null);
         setContentView(dotToDotView);*/
         setContentView(R.layout.activity_pattern);
+        Button nextButton = findViewById(R.id.nextButton);
+          int[][] originalCatPoints = {
+                {300, 100}, // Left ear tip
+                {200, 200}, // Left ear base
+                {400, 200}, // Right ear base
+                {500, 100}, // Right ear tip
+                {350, 300}, // Chin
+                {250, 250}, // Left cheek
+                {450, 250}, // Right cheek
+                {200, 400}, // Left body
+                {500, 400}, // Right body
+                {350, 500}  // Tail start
+        };
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConnectDotsView connectDotsView = new ConnectDotsView(getApplicationContext(),originalCatPoints,R.drawable.dog);
+                connectDotsView.resetPattern();
+            }
+        });
       /*  EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pattern);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

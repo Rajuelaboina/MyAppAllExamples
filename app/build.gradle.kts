@@ -112,4 +112,8 @@ dependencies {
 
     // amazon
     implementation("com.eftimoff:android-patternview:1.0.6@aar")
+
+        //implementation 'com.google.android.gms:play-services-maps:17.0.1' // or the latest version
+    implementation("com.google.maps:google-maps-services:0.17.0")  // For Directions API
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }

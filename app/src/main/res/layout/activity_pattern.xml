@@ -6,12 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PatternActivity">
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Next"
+        app:layout_constraintStart_toStartOf="@+id/dotToDotView"
+        app:layout_constraintTop_toTopOf="@+id/dotToDotView" />
+
     <com.phycaresolutions.mymap.ConnectDotsView
         android:id="@+id/dotToDotView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"/>
-   <!-- <com.eftimoff.patternview.PatternView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- <com.eftimoff.patternview.PatternView
         android:id="@+id/patternView"
         android:layout_width="0dp"
         android:layout_height="466dp"
@@ -34,7 +49,7 @@
         android:layout_height="match_parent"/>-->
 
 
-   <!-- <com.phycaresolutions.mymap.PaintView
+    <!-- <com.phycaresolutions.mymap.PaintView
         android:id="@+id/dotsView"
         android:layout_width="0dp"
         android:layout_height="0dp"

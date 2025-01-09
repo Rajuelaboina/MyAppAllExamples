@@ -1,16 +1,12 @@
 package com.phycaresolutions.mymap;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Point;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -21,7 +17,7 @@ public class ConnectDotsView extends View {
 
 
 
-    private final int[][] originalCatPoints = {
+    int[][] originalCatPoints ; /*{
             {300, 100}, // Left ear tip
             {200, 200}, // Left ear base
             {400, 200}, // Right ear base
@@ -32,21 +28,33 @@ public class ConnectDotsView extends View {
             {200, 400}, // Left body
             {500, 400}, // Right body
             {350, 500}  // Tail start
-    };
+    };*/
 
     private int[][] catPoints; // Adjusted coordinates for centering
 
-    private final Paint dotPaint;
-    private final Paint linePaint;
-    private final Paint textPaint;
+    private Paint dotPaint;
+    private Paint linePaint;
+    private Paint textPaint;
 
     private final List<int[]> selectedDots = new ArrayList<>();
     private boolean isCompleted = false;
 
+    private int currentImageIndex = 0;
     private Bitmap catImage;
+
+    public ConnectDotsView(Context context, int[][] originalCatPoints, int dog) {
+        super(context);
+        this.originalCatPoints =originalCatPoints;
+        initializeCatDots();
+        init(); // 
+    }
 
     public ConnectDotsView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
+    }
+    public void init(){
+
 
         // Initialize paints
         dotPaint = new Paint();
@@ -99,7 +107,7 @@ public class ConnectDotsView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // Draw the dots with numbers
+       /* // Draw the dots with numbers
         for (int i = 0; i < catPoints.length; i++) {
             int[] point = catPoints[i];
             dotPaint.setColor(i == 0 ? Color.RED : Color.BLACK); // First dot is red
@@ -129,6 +137,34 @@ public class ConnectDotsView extends View {
             canvas.drawText("Pattern Completed!", canvas.getWidth() / 4, canvas.getHeight() - 100, textPaint);
             resetPattern();
             initializeCatDots();
+        }*/
+        // Draw dots
+        if (catPoints != null) {
+            for (int[] point : catPoints) {
+                canvas.drawCircle(point[0], point[1], 20, dotPaint);
+            }
+        }
+
+        // Draw lines between connected dots
+        if (!selectedDots.isEmpty()) {
+            for (int i = 0; i < selectedDots.size() - 1; i++) {
+                int[] start = selectedDots.get(i);
+                int[] end = selectedDots.get(i + 1);
+                canvas.drawLine(start[0], start[1], end[0], end[1], linePaint);
+            }
+        }
+
+        // If completed, display the current image
+        if (isCompleted) {
+            Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.cat);
+            int centerX = (canvas.getWidth() - image.getWidth()) / 2;
+            int centerY = (canvas.getHeight() - image.getHeight()) / 2;
+            canvas.drawBitmap(image, centerX, centerY, null);
+
+            Paint textPaint = new Paint();
+            textPaint.setColor(Color.GREEN);
+            textPaint.setTextSize(60);
+            canvas.drawText("Pattern Completed!", canvas.getWidth() / 4, canvas.getHeight() - 100, textPaint);
         }
     }
 
