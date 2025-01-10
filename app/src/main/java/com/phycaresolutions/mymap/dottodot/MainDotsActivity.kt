@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap
+package com.phycaresolutions.mymap.dottodot
 
 import android.os.Bundle
 import android.view.View

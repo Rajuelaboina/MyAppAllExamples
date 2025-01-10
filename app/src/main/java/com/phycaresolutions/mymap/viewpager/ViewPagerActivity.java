@@ -1,26 +1,16 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.viewpager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.restfull.ApiService;
-import com.phycaresolutions.mymap.restfull.Details;
-import com.phycaresolutions.mymap.restfull.ServiceInstance;
-import com.phycaresolutions.mymap.restfull.UserViewPageAdapter;
 import com.phycaresolutions.mymap.restfull.ViewPagerAdapter;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ViewPagerActivity extends AppCompatActivity {
    ApiService apiService;

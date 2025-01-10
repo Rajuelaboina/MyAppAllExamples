@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.phycaresolutions.mymap.ItemClass;
+import com.phycaresolutions.mymap.model.ItemClass;
 import com.phycaresolutions.mymap.R;
 
 import java.util.ArrayList;

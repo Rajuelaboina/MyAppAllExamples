@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.bottomnav;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.phycaresolutions.mymap.R;
 
 public class BottomTestActivity extends AppCompatActivity {
 

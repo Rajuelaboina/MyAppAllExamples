@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.phycaresolutions.mymap.Model;
+import com.phycaresolutions.mymap.model.Model;
 import com.phycaresolutions.mymap.R;
 
 import java.util.List;

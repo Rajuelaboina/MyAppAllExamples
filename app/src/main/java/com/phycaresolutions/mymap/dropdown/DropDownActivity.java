@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.dropdown;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -11,24 +11,18 @@ import android.widget.AdapterView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.phycaresolutions.mymap.model.ItemClass;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.adapter.UserAdapter2;
 import com.phycaresolutions.mymap.databinding.ActivityDropDownBinding;
 import com.phycaresolutions.mymap.db.UserDataBase;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 

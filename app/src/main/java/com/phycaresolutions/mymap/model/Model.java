@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.model;
 
 public class Model {
     public int type;

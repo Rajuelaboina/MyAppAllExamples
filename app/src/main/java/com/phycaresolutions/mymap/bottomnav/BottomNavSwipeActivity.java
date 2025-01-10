@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.bottomnav;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.adapter.ViewPagerAdapter;
 
 public class BottomNavSwipeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {

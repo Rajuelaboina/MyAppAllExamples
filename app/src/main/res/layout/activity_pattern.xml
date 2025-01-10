@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatternActivity">
+    tools:context=".dottodot.PatternActivity">
 
     <Button
         android:id="@+id/nextButton"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="@+id/dotToDotView"
         app:layout_constraintTop_toTopOf="@+id/dotToDotView" />
 
-    <com.phycaresolutions.mymap.ConnectDotsView
+    <com.phycaresolutions.mymap.dottodot.ConnectDotsView
         android:id="@+id/dotToDotView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -43,13 +43,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:pathColor="@color/primary_dark_material_light"
         tools:ignore="MissingConstraints" />-->
-    <!--<com.phycaresolutions.mymap.ConnectDotsView
+    <!--<com.phycaresolutions.mymap.dottodot.ConnectDotsView
         android:id="@+id/connect_dots_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>-->
 
 
-    <!-- <com.phycaresolutions.mymap.PaintView
+    <!-- <com.phycaresolutions.mymap.dottodot.PaintView
         android:id="@+id/dotsView"
         android:layout_width="0dp"
         android:layout_height="0dp"

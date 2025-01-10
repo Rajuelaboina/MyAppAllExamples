@@ -1,18 +1,12 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.dottodot;
 
-import android.graphics.Point;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.phycaresolutions.mymap.R;
 
 public class PatternActivity extends AppCompatActivity {
 

@@ -1,21 +1,15 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.viewpager;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.gms.common.api.Api;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.restfull.ApiService;
 import com.phycaresolutions.mymap.restfull.Details;
 import com.phycaresolutions.mymap.restfull.ServiceInstance;
@@ -25,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -23,13 +23,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".addorremove.AddorRemoveEdittextMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".multiviewrecycler.MainActivity3"
-            android:exported="true" >
-       <!-- <intent-filter>
+            android:exported="true">
+
+            <!--
+        <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>-->
+        </intent-filter>
+            -->
         </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -50,14 +56,17 @@
             android:name=".map.MapsActivityTwoLocatins"
             android:exported="true"
             android:label="@string/app_name">
-          <!--  <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
-            android:name=".PatternActivity"
+            android:name=".dottodot.PatternActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
 
@@ -70,7 +79,7 @@
             -->
         </activity>
         <activity
-            android:name=".WorkActivity"
+            android:name=".cameraopen.WorkActivity"
             android:exported="true">
 
             <!--
@@ -82,7 +91,7 @@
             -->
         </activity>
         <activity
-            android:name=".ViewPager2Activity"
+            android:name=".viewpager.ViewPager2Activity"
             android:exported="true">
 
             <!--
@@ -94,7 +103,7 @@
             -->
         </activity>
         <activity
-            android:name=".ViewPagerActivity"
+            android:name=".viewpager.ViewPagerActivity"
             android:exported="true">
 
             <!--
@@ -106,7 +115,7 @@
             -->
         </activity>
         <activity
-            android:name=".TabsBottomActivity"
+            android:name=".bottomnav.TabsBottomActivity"
             android:exported="true">
 
             <!--
@@ -118,7 +127,7 @@
             -->
         </activity>
         <activity
-            android:name=".BottomNavSwipeActivity"
+            android:name=".bottomnav.BottomNavSwipeActivity"
             android:exported="true">
 
             <!--
@@ -130,7 +139,7 @@
             -->
         </activity>
         <activity
-            android:name=".BottomTestActivity"
+            android:name=".bottomnav.BottomTestActivity"
             android:exported="true">
 
             <!--
@@ -153,7 +162,7 @@
         </activity>
         -->
         <activity
-            android:name=".DropDownActivity"
+            android:name=".dropdown.DropDownActivity"
             android:exported="true">
 
             <!--
@@ -166,7 +175,7 @@
         </activity>
         <activity
             android:name=".multiviewrecycler.MainActivity2"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,24 +1,6 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Spinner;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class WorkAdapter /*extends RecyclerView.Adapter<WorkAdapter.MyViewHolder>*/ {
     Context mContext;

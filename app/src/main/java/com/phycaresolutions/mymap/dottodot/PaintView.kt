@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap
+package com.phycaresolutions.mymap.dottodot
 
 import android.content.Context
 import android.graphics.Canvas

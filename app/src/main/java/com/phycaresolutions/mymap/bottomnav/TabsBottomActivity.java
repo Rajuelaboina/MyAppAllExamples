@@ -1,17 +1,12 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.bottomnav;
 
 import android.os.Bundle;
-import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.google.gson.JsonObject;
+import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.adapter.SectionsPagerAdapter;
 import com.phycaresolutions.mymap.databinding.ActivityTabsBottomBinding;
 
