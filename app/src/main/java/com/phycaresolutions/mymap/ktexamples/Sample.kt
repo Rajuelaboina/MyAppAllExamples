@@ -1,6 +1,4 @@
-package com.phycaresolutions.mymap
-
-import kotlin.Result
+package com.phycaresolutions.mymap.ktexamples
 
 class Sample : OnItemClickListener {
     override fun onItemClick() {

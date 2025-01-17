@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.phycaresolutions.mymap.Db_Item;
+import com.phycaresolutions.mymap.model.Db_Item;
 
 import java.util.ArrayList;
 import java.util.List;

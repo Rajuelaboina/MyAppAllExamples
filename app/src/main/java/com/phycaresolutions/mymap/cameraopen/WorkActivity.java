@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.phycaresolutions.mymap.Db_Item;
+import com.phycaresolutions.mymap.model.Db_Item;
 import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.db.UserDataBase;
 
