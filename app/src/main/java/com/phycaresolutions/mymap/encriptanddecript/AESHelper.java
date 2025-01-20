@@ -1,11 +1,10 @@
-package com.phycaresolutions.mymap;
+package com.phycaresolutions.mymap.encriptanddecript;
 
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
 import java.util.Base64;
-import java.util.Random;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;

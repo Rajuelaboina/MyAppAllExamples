@@ -50,16 +50,21 @@ public class CameraActivity extends AppCompatActivity {
 
            /* intent1.putExtra(Intent.EXTRA_SUBJECT,"this is demo");
             intent1.putExtra(Intent.EXTRA_TEXT,"hello");
-
             intent1.setType("text/plain");
             startActivity(Intent.createChooser(intent1,"Raju"));*/
 
+           /* Intent insertIntent = new Intent(Intent.ACTION_INSERT);
+            insertIntent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+            insertIntent.putExtra(ContactsContract.Intents.Insert.NAME, "John Doe");
+            insertIntent.putExtra(ContactsContract.Intents.Insert.PHONE, "123-456-7890");
+            insertIntent.putExtra(ContactsContract.Intents.Insert.EMAIL, "john.doe@example.com");
+            startActivity(insertIntent);*/
         });
        btn2.setOnClickListener(v->{
             Intent intent = new Intent();
             intent.setType("*/*");
             //intent.setType("text/plain");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.setAction(Intent.ACTION_PICK);
             intent.putExtra("return-data", true);
             someActivityResultLauncher.launch(intent);
         });
@@ -145,3 +150,5 @@ public class CameraActivity extends AppCompatActivity {
         someActivityResultLauncher.launch(intent);
     }
 }
+/*
+https://developer.android.com/reference/android/content/Intent*/
