@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
@@ -37,13 +39,14 @@
         android:theme="@style/Theme.MyMap"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".backgroundservices.LocationBackGroundActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".backgroundservices.MyReceiver"
             android:enabled="true"
-            android:exported="true">
-
-        </receiver>
-
+            android:exported="true"></receiver>
 
         <service
             android:name=".backgroundservices.MyService"
@@ -52,8 +55,8 @@
             android:foregroundServiceType="camera"
             android:stopWithTask="false"
             tools:ignore="ForegroundServicePermission" />
-
-       <!-- <receiver
+        <!--
+ <receiver
             android:name=".backgroundservices.SensorRestarterBroadcastReceiver"
             android:enabled="true"
             android:exported="true"
@@ -61,8 +64,8 @@
             <intent-filter>
                 <action android:name="ac.in.ActivityRecognition.RestartSensor" />
             </intent-filter>
-        </receiver>-->
-
+        </receiver>
+        -->
         <activity
             android:name=".backgroundservices.BackGroundMainActivity"
             android:exported="true">

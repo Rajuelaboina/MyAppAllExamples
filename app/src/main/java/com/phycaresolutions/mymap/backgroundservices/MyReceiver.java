@@ -15,10 +15,14 @@ public class MyReceiver extends BroadcastReceiver {
        /* Bundle b = intent.getExtras();
         String yourValue = b.getString("counter");*/
         int count = intent.getIntExtra("COUNT",0);
-        Log.e("MyReceiver","COUNT: " + count);
-        myCallBack.getResult(count);
+        double Latitude = intent.getDoubleExtra("Latitude",0);
+        double Longitude = intent.getDoubleExtra("Longitude",0);
+        //Log.e("MyReceiver","COUNT: " + count + "\n" + Latitude + "\n" + Longitude);
+        myCallBack.getResult(count,Latitude,Longitude);
     }
     public static void setListener(MyCallBack myCallBack2){
         myCallBack = myCallBack2;
     }
+
+
 }
