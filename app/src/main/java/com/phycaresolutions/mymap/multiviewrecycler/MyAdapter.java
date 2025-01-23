@@ -86,7 +86,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return map.size();
     }
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tv5,tv6;
         LinearLayout layout;
         public MyViewHolder(@NonNull View itemView) {

@@ -40,13 +40,31 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".backgroundservices.LocationBackGroundActivity"
-            android:exported="false" />
+            android:name=".innerrecyclerview.RecyclerViewActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".navigationinsideexpadablelist.ExpandMainActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
 
         <receiver
             android:name=".backgroundservices.MyReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <service
             android:name=".backgroundservices.MyService"
@@ -69,11 +87,14 @@
         <activity
             android:name=".backgroundservices.BackGroundMainActivity"
             android:exported="true">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".cameraopen.CameraActivity"
@@ -170,14 +191,11 @@
         <activity
             android:name=".viewpager.ViewPagerActivity"
             android:exported="true">
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name=".bottomnav.TabsBottomActivity"

@@ -87,10 +87,10 @@ public class BackGroundMainActivity extends AppCompatActivity implements MyCallB
         Intent intent = new Intent(this, MyService.class);
         bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);*/
 
+        new MyAsyn().execute();
 
 
-
-        myReceiver = new MyReceiver();
+       /* myReceiver = new MyReceiver();
         myReceiver.setListener(this);
         IntentFilter filter = new IntentFilter("YourAction");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -100,7 +100,7 @@ public class BackGroundMainActivity extends AppCompatActivity implements MyCallB
         }
 
         Intent serviceIntent = new Intent(this, MyService.class);
-        startService(serviceIntent);
+        startService(serviceIntent);*/
 
 
 
@@ -234,6 +234,22 @@ public class BackGroundMainActivity extends AppCompatActivity implements MyCallB
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
         } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
+        }
+    }
+
+    class MyAsyn extends AsyncTask<String,Void,String>{
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                Geocoder geocoder = new Geocoder(getApplicationContext());
+                List<Address> addresses = geocoder.getFromLocation(17.406496666666666, 78.47724333333333, 1);
+                Address address = addresses.get(0);
+                String add = address.getLocality();
+                Log.e("LOCATION", "Location<>>>>>>>: " + add);
+            }  catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return "";
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.phycaresolutions.mymap.restfull;
+package com.phycaresolutions.mymap.viewpager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
