@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.phycaresolutions.mymap.R;
 
 import java.util.ArrayList;
@@ -116,6 +117,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     selectPosition = position;
                     notifyDataSetChanged();
+
                 }
             });
             if (selectPosition != position){
