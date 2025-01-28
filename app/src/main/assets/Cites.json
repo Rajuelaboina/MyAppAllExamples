@@ -1,0 +1,58 @@
+{
+  "UP": [
+    {
+      "Agra": [
+        {
+          "Br.Name": "A BRANCH"
+        },
+        {
+          "Br.Name": "B BRANCH"
+        },
+        {
+          "Br.Name": "C BRANCH"
+        }
+      ]
+    },
+    {
+      "Bareilly": [
+        {
+          "Br.Name": "A BRANCH"
+        },
+        {
+          "Br.Name": "B BRANCH"
+        },
+        {
+          "Br.Name": "C BRANCH"
+        }
+      ]
+    }
+  ],
+  "MP": [
+    {
+      "INDORE": [
+        {
+          "Br.Name": "A BRANCH"
+        },
+        {
+          "Br.Name": "B BRANCH"
+        },
+        {
+          "Br.Name": "C BRANCH"
+        }
+      ]
+    },
+    {
+      "BHOPAL": [
+        {
+          "Br.Name": "A BRANCH"
+        },
+        {
+          "Br.Name": "B BRANCH"
+        },
+        {
+          "Br.Name": "C BRANCH"
+        }
+      ]
+    }
+  ]
+}
