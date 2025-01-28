@@ -1,40 +1,29 @@
 package com.phycaresolutions.mymap.animations;
 
-import android.animation.AnimatorSet;
-import android.animation.FloatEvaluator;
-import android.animation.IntEvaluator;
-import android.animation.ObjectAnimator;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.phycaresolutions.mymap.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class AnimationMainActivity extends AppCompatActivity {
-    Button myButton;
-    View myView;
-    boolean isUp;
+
     Spinner sp1,sp2;
-    private ArrayAdapter<String> parentAdapter;
-    private ArrayAdapter<String> childAdapter;
-    private List<String> fruits = Arrays.asList("Apple", "Banana", "Orange");
-    private List<String> vegetables = Arrays.asList("Carrot", "Broccoli", "Spinach");
     private Map<String, List<String>> districtsByState;
     ArrayAdapter<String> adapter2;
     @Override
@@ -47,15 +36,15 @@ public class AnimationMainActivity extends AppCompatActivity {
         districtsByState = new HashMap<>();
         districtsByState.put("state1",Arrays.asList("District-1","District-2","District-3"));
         districtsByState.put("state2",Arrays.asList("District - s2-1","District -s2-2"));
-        districtsByState.put("state3",Arrays.asList(""));
-        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,states);
+        districtsByState.put("state3", Collections.singletonList(""));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,states);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp1.setAdapter(adapter);
 
 
 
 
-        adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item,new ArrayList());
+        adapter2 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,new ArrayList<>());
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp2.setAdapter(adapter2);
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -69,7 +58,10 @@ public class AnimationMainActivity extends AppCompatActivity {
                  adapter2.addAll(dis);
                  adapter2.notifyDataSetChanged();
              }
-
+                //getPopup();
+               /* BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(AnimationMainActivity.this);
+                bottomSheetDialog.setContentView(R.layout.item_sub_child);
+                bottomSheetDialog.show();*/
             }
 
             @Override
@@ -78,7 +70,12 @@ public class AnimationMainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView imageView = findViewById(R.id.imageView6);
+        imageView.setBackgroundResource(R.drawable.vct);
+        AnimationDrawable myAnimation = (AnimationDrawable) imageView.getBackground();
 
+//Triggers in somewhere else in a thread
+        myAnimation.start();
        /* myButton = findViewById(R.id.my_button);
         myView = findViewById(R.id.my_view);
         myView.setVisibility(View.INVISIBLE);
@@ -100,19 +97,20 @@ public class AnimationMainActivity extends AppCompatActivity {
         });*/
     }
 
+    private void getPopup() {
+        PopupMenu popupMenu = new PopupMenu(this,sp2);
+        popupMenu.getMenuInflater().inflate(R.menu.main_menu2,popupMenu.getMenu());
+        popupMenu.show();
+    }
 
 
     private void slideUp(View myView) {
-        /*myView.setVisibility(View.VISIBLE);
+        myView.setVisibility(View.VISIBLE);
         TranslateAnimation translateAnimation = new TranslateAnimation(0,0,myView.getHeight(),0);
         translateAnimation.setDuration(500);
         translateAnimation.setFillAfter(true);
-        myView.startAnimation(translateAnimation);*/
-      /*  ObjectAnimator animX = ObjectAnimator.ofFloat(myView, "x", 50f);
-        ObjectAnimator animY = ObjectAnimator.ofFloat(myView, "y", 100f);
-        AnimatorSet animSetXY = new AnimatorSet();
-        animSetXY.playTogether(animX, animY);
-        animSetXY.start();*/
+        myView.startAnimation(translateAnimation);
+
 
     }
 
