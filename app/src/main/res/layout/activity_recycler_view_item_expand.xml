@@ -15,5 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_row_expand"/>
+        tools:listitem="@layout/item_row_expand"
+        android:layoutAnimation="@anim/layout_animation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </androidx.constraintlayout.widget.ConstraintLayout>

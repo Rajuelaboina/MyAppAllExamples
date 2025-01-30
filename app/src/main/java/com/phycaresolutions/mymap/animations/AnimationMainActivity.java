@@ -122,4 +122,157 @@ public class AnimationMainActivity extends AppCompatActivity {
     }
 }
 /*
-https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/graphics/2d-graphics.html*/
+https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/graphics/2d-graphics.html
+     // INSIDE Recyclerview xml
+      android:layoutAnimation="@anim/layout_animation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+    // Inside Activity class
+     int resId = 0;
+
+        switch (v.getId()) {
+            case R.id.fall_down_button:
+                resId = R.anim.layout_animation_fall_down;
+                break;
+            case R.id.btn_slide_up:
+                resId = R.anim.layout_animation_slide_up;
+                break;
+            case R.id.btn_rotate_in:
+                resId = R.anim.layout_animation_rotate_in;
+                break;
+            case R.id.btn_scale_in:
+                resId = R.anim.layout_animation_scale_in;
+                break;
+        }
+
+        if (resId != 0) {
+            // Set animation for RecyclerView
+            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(this, resId);
+            recyclerView.setLayoutAnimation(animation);
+            recyclerViewAdapter.notifyDataSetChanged();
+        }
+
+   ObjectAnimator:
+1.
+ObjectAnimator animator = ObjectAnimator.ofFloat(targetView, "translationX", 0f, 100f);
+animator.setDuration(1000);  // 1 second
+animator.start();
+2 .Group multiple animations
+ObjectAnimator scaleX = ObjectAnimator.ofFloat(targetView, "scaleX", 1f, 1.5f);
+ObjectAnimator scaleY = ObjectAnimator.ofFloat(targetView, "scaleY", 1f, 1.5f);
+AnimatorSet animatorSet = new AnimatorSet();
+animatorSet.playTogether(scaleX, scaleY);
+animatorSet.setDuration(1000);
+animatorSet.start();
+3. Animate multiple properties
+PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("scaleX", 1f, 1.5f);
+PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("scaleY", 1f, 1.5f);
+ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(targetView, pvhX, pvhY);
+animator.setDuration(1000);
+animator.start();
+4.
+PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("scaleX", 1f, 1.5f);
+PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("scaleY", 1f, 1.5f);
+ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(targetView, pvhX, pvhY);
+animator.setDuration(1000);
+animator.start();
+5.
+Keyframe kf0 = Keyframe.ofFloat(0f, 0f);
+Keyframe kf1 = Keyframe.ofFloat(0.5f, 200f);
+Keyframe kf2 = Keyframe.ofFloat(1f, 0f);
+PropertyValuesHolder pvh = PropertyValuesHolder.ofKeyframe("translationX", kf0, kf1, kf2);
+ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(targetView, pvh);
+animator.setDuration(2000);
+animator.start();
+6.
+ObjectAnimator fadeOut = ObjectAnimator.ofFloat(targetView, "alpha", 1f, 0f);
+fadeOut.setDuration(2000);
+fadeOut.start();
+7.
+ObjectAnimator bounceAnim = ObjectAnimator.ofFloat(targetView, "translationY", 0f, 300f);
+bounceAnim.setInterpolator(new BounceInterpolator());
+bounceAnim.setDuration(2000);
+bounceAnim.start();
+8.
+ObjectAnimator moveRight = ObjectAnimator.ofFloat(targetView, "translationX", 0f, 300f);
+ObjectAnimator moveDown = ObjectAnimator.ofFloat(targetView, "translationY", 0f, 300f);
+AnimatorSet set = new AnimatorSet();
+set.playSequentially(moveRight, moveDown);
+set.setDuration(2000);
+set.start();
+9 Drawable animation:
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/rocket_thrust1" android:duration="200" />
+    <item android:drawable="@drawable/rocket_thrust2" android:duration="200" />
+    <item android:drawable="@drawable/rocket_thrust3" android:duration="200" />
+</animation-list>
+ ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);
+rocketImage.setBackgroundResource(R.drawable.rocket_thrust);
+AnimationDrawable  animationDrawable = (AnimationDrawable) rocketImage.getBackground();
+animationDrawable.start();
+10. Intent to Activity Animations
+overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+----------------  OR --------------------
+Intent myIntent = new Intent(context, MyActivity.class);
+ActivityOptions options =
+        ActivityOptions.makeCustomAnimation(context, R.anim.in_from_right, R.anim.out_to_left);
+context.startActivity(myIntent, options.toBundle());
+slide_in_left.xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+                    android:duration="@android:integer/config_mediumAnimTime"
+                    android:fromXDelta="-100%p"
+                    android:toXDelta="0" />
+</set>
+slide_in_right.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<translate
+		android:duration="@android:integer/config_mediumAnimTime"
+		android:fromXDelta="100%p"
+		android:toXDelta="0" />
+</set>
+
+
+slide_out_left.xm
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<translate
+		android:duration="@android:integer/config_mediumAnimTime"
+		android:fromXDelta="0"
+		android:toXDelta="-100%p" />
+</set>
+
+
+slide_out_right.xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<translate
+		android:duration="@android:integer/config_mediumAnimTime"
+		android:fromXDelta="0"
+		android:toXDelta="100%p" />
+</set>
+
+OR---------
+<item name="android:windowAnimationStyle">
+                 @style/MyCustomActivityAnimation</item>
+
+<style name="MyCustomActivityAnimation"
+                    parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+                    @anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">
+                    @anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">
+                    @anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">
+                    @anim/slide_out_right</item>
+    </style>
+
+
+
+
+*/
