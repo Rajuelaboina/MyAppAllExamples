@@ -218,6 +218,7 @@ Intent myIntent = new Intent(context, MyActivity.class);
 ActivityOptions options =
         ActivityOptions.makeCustomAnimation(context, R.anim.in_from_right, R.anim.out_to_left);
 context.startActivity(myIntent, options.toBundle());
+
 slide_in_left.xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">

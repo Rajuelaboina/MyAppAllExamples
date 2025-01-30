@@ -1,14 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
-   <!-- <string name="app_name">MYAPP</string>-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- <string name="app_name">MYAPP</string>-->
     <string name="app_name">MYAPP</string>
-    <string name="selected_language" >English</string>
-    <string name="language" >Hi, MyApp</string>
- <string name="rb1" >Telugu</string>
- <string name="rb2" > English </string>
-    <string name="select_language" > Select Language</string>
-    <string name="length2" >Length 2:</string>
-    <string name="length1" >Length 1:</string>
+    <string name="selected_language">English</string>
+    <string name="language">Hi, MyApp</string>
+    <string name="rb1">Telugu</string>
+    <string name="rb2"> English </string>
+    <string name="select_language"> Select Language</string>
+    <string name="length2">Length 2:</string>
+    <string name="length1">Length 1:</string>
     <string name="enter">Enter a Value</string>
     <string name="triangle">Triangle</string>
     <string name="circle">Circle</string>

@@ -101,8 +101,9 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
     implementation("com.google.accompanist:accompanist-pager-indicators:0.30.1")
-    implementation("com.squareup.retrofit2:retrofit:2.3.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
    // implementation("com.squareup.okhttp3:logging-interceptor:3.4.1")
  //   implementation("com.squareup.okhttp3:okhttps:3.4.1")
@@ -112,11 +113,13 @@ dependencies {
   //  implementation("com.github.Mindinventory:LinkedInLogin:*.*.*")
 
     // amazon
-    implementation("com.eftimoff:android-patternview:1.0.6@aar")
+  //  implementation("com.eftimoff:android-patternview:1.0.6@aar")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
         //implementation 'com.google.android.gms:play-services-maps:17.0.1' // or the latest version
     implementation("com.google.maps:google-maps-services:0.17.0")  // For Directions API
+
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
-    implementation("com.android.volley:volley:1.2.1")
+   // implementation("com.android.volley:volley:1.2.1")
 }

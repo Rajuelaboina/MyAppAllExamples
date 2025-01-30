@@ -21,6 +21,9 @@
         <item name="android:textColor">@color/green</item>-->
         <item name="android:windowDisablePreview">true</item>
        <!-- <item name="materialButtonStyle">@style/btnStyle</item>-->
+
+        <!-- Animation -->
+        <!--<item name="android:windowAnimationStyle">@style/MyCustomActivityAnimation</item>-->
     </style>
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
@@ -76,5 +79,16 @@
         <item name="android:paddingEnd">10dp</item>
         <item name="android:minWidth">10dp</item>
     </style>
+   <!-- <style name="MyCustomActivityAnimation"
+        parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+            @anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/slide_out_right</item>
+    </style>-->
 
 </resources>
