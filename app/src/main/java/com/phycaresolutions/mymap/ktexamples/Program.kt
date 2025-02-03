@@ -58,7 +58,7 @@ fun main(args:Array<String>){
     program.subTwoNum(10,5){ x,y-> x-y }  // third way
 
     // closures
-    var result =0
+    var result = 0
     val mul :(Int,Int)-> Unit = {x,y-> result = x*y }
     program.mulTwoNum(2,3,mul)
     println("2*3 = $result")
@@ -66,3 +66,4 @@ fun main(args:Array<String>){
 interface MyInterface{
     fun execute(sum:Int)
 }
+// let  run with apply also

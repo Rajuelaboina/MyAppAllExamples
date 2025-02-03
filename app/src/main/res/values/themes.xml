@@ -24,6 +24,18 @@
 
         <!-- Animation -->
         <!--<item name="android:windowAnimationStyle">@style/MyCustomActivityAnimation</item>-->
+       <!-- windowActionBar and  windowNoTitle are CollapsingToolbarLayout use u can anabled-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Navigation Drawer -->
+        <item name="colorNavigationItem">@color/menu_item_color_state</item>
+        <item name="colorNavigationItemSelected">@color/white</item>
+        <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
+    </style>
+
+    <style name="NoActionBarTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
     </style>
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
@@ -54,6 +66,9 @@
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="colorOnSecondary">@color/white</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="Theme.MyMap" parent="Base.Theme.MyMap" />
 
@@ -90,5 +105,11 @@
         <item name="android:activityCloseExitAnimation">
             @anim/slide_out_right</item>
     </style>-->
+    <style name="Widget.Custom.NavigationView" parent="Widget.Design.NavigationView">
+        <item name="itemIconTint">?attr/colorNavigationItem</item>
+        <item name="itemTextColor">?attr/colorNavigationItem</item>
+        <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
+
+    </style>
 
 </resources>

@@ -4,4 +4,8 @@
         <attr name="dots_positions" format="reference"/>
         <attr name="dots_drawable" format="reference"/>
     </declare-styleable>
+    <attr name="colorNavigationItem" format="color" />
+    <attr name="colorNavigationItemSelected" format="color" />
+    <attr name="colorOnPrimary" format="color" />
+    <attr name="drawableNavigationItemBackground" format="reference" />
 </resources>

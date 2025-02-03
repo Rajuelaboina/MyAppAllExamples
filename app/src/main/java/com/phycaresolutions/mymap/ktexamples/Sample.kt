@@ -70,3 +70,4 @@ fun progressResult(result20: Result20){
         else -> {}
     }
 }
+// dependency injection is a programming technique in which an object or function receives other objects or functions that it requires, as opposed to creating them internally. Dependency injection aims to separate the concerns of constructing objects and using them, leading to loosely coupled programs.

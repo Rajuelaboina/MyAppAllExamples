@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--AppBarLayout helps the toolbar and other components to react on
+        scroll changes. I am using Dark theme for AppBarLayout.
+        Inside this AppBarLayout i
+        have used CollapsingToolbarLayout. -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- In CollapsingToolbarLayout some important attributes are:
+         i)  app:layout_scrollFlags which is used to specify how collapsing
+             layout behaves when content is scrolled.I have used
+             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+             so it will scroll until it's is completely collapsed.
+         ii) app:contentScrim="@color/green" that specifies the color
+              of the collapsed toolbar -->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/app_name">
+
+            <!--We are adding the image that we have added earlier
+                  in the drawable folder.The attribute app:layout_collapseMode="parallax"
+                  causes the image to move when user scrolls at a specific ratio. -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_logout_24"
+                app:layout_collapseMode="parallax" />
+
+            <!-- The attribute app:layout_collapseMode="pin" is set so that
+                 sticks to the top when the user scrolls the view up-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/Theme.Design.NoActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--Now add the NestedScollView-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--In textview we will be adding the text that i have
+            added earlier in strings.xml file.This is simply the
+            the content to be scrolled -->
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+Android CollapsingToolbarLayout
+Android CollapsingToolbarLayout is a wrapper for Toolbar which implements a collapsing app bar. It is designed to be used as a direct child of a AppBarLayout. This type of layout is commonly seen in the Profile Screen of the Whatsapp Application. This layout consists of:
+
+Collapsing Title: The title is larger when the layout is expanded. The text size becomes smaller as the layout is collapsed and scrolled off the screen.
+app:layout_scrollFlags: The scroll flags of this layout is typically set to “scroll|exitUntilCollapsed”.
+app:collapsedTitleGravity: Specifies the gravity of title in the container when collapsed.
+app:contentScrim: This requires specifying a drawable or color value of the CollapsingToolbarLayouts content when it has been scrolled sufficiently off screen eg. ?attr/colorPrimary.
+app:scrimAnimationDuration: Specifies the duration used for scrim visibility animations. This requires an integer value such as “100”.
+If you’ve updated to the latest SDK recently choose the Scrolling Activity type (it contains a ready-made implementation of CollapsingToolbarLayout) while creating a new project.
+
+Android CollapsingToolbarLayout
+Android CollapsingToolbarLayout is a wrapper for Toolbar which implements a collapsing app bar. It is designed to be used as a direct child of a AppBarLayout. This type of layout is commonly seen in the Profile Screen of the Whatsapp Application. This layout consists of:
+
+Collapsing Title: The title is larger when the layout is expanded. The text size becomes smaller as the layout is collapsed and scrolled off the screen.
+app:layout_scrollFlags: The scroll flags of this layout is typically set to “scroll|exitUntilCollapsed”.
+app:collapsedTitleGravity: Specifies the gravity of title in the container when collapsed.
+app:contentScrim: This requires specifying a drawable or color value of the CollapsingToolbarLayouts content when it has been scrolled sufficiently off screen eg. ?attr/colorPrimary.
+app:scrimAnimationDuration: Specifies the duration used for scrim visibility animations. This requires an integer value such as “100”.
+If you’ve updated to the latest SDK recently choose the Scrolling Activity type (it contains a ready-made implementation of CollapsingToolbarLayout) while creating a new project.
+
+Android CollapsingToolbarLayout
+Android CollapsingToolbarLayout is a wrapper for Toolbar which implements a collapsing app bar. It is designed to be used as a direct child of a AppBarLayout. This type of layout is commonly seen in the Profile Screen of the Whatsapp Application. This layout consists of:
+
+Collapsing Title: The title is larger when the layout is expanded. The text size becomes smaller as the layout is collapsed and scrolled off the screen.
+app:layout_scrollFlags: The scroll flags of this layout is typically set to “scroll|exitUntilCollapsed”.
+app:collapsedTitleGravity: Specifies the gravity of title in the container when collapsed.
+app:contentScrim: This requires specifying a drawable or color value of the CollapsingToolbarLayouts content when it has been scrolled sufficiently off screen eg. ?attr/colorPrimary.
+app:scrimAnimationDuration: Specifies the duration used for scrim visibility animations. This requires an integer value such as “100”.
+If you’ve updated to the latest SDK recently choose the Scrolling Activity type (it contains a ready-made implementation of CollapsingToolbarLayout) while creating a new project.
+
+Android CollapsingToolbarLayout
+Android CollapsingToolbarLayout is a wrapper for Toolbar which implements a collapsing app bar. It is designed to be used as a direct child of a AppBarLayout. This type of layout is commonly seen in the Profile Screen of the Whatsapp Application. This layout consists of:
+
+Collapsing Title: The title is larger when the layout is expanded. The text size becomes smaller as the layout is collapsed and scrolled off the screen.
+app:layout_scrollFlags: The scroll flags of this layout is typically set to “scroll|exitUntilCollapsed”.
+app:collapsedTitleGravity: Specifies the gravity of title in the container when collapsed.
+app:contentScrim: This requires specifying a drawable or color value of the CollapsingToolbarLayouts content when it has been scrolled sufficiently off screen eg. ?attr/colorPrimary.
+app:scrimAnimationDuration: Specifies the duration used for scrim visibility animations. This requires an integer value such as “100”.
+If you’ve updated to the latest SDK recently choose the Scrolling Activity type (it contains a ready-made implementation of CollapsingToolbarLayout) while creating a new project.
+" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

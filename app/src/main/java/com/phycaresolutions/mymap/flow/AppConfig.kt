@@ -7,8 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 object AppConfig {
     // Base url of the api
     private const val BASE_URL = "https://jsonplaceholder.typicode.com"
-
-
     fun ApiService():ApiService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))

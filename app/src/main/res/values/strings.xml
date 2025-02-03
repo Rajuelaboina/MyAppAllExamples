@@ -27,6 +27,8 @@
     <string name="dashboard">Dashboard</string>
     <string name="settings">Settings</string>
     <string name="title_activity_maps_two_locatins">MapsActivityTwoLocatins</string>
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
 
 
 </resources>
