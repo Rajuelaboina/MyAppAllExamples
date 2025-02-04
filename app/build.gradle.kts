@@ -90,6 +90,7 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.navigation.compose)
     implementation(libs.work.runtime)
+    implementation(libs.play.services.ads)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -122,4 +123,8 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
    // implementation("com.android.volley:volley:1.2.1")
+
+    // Room data Base
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
 }
