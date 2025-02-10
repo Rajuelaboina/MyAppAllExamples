@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Button will perform a task to fetch the
+        list of paired Bluetooth Devices-->
+
+    <!--A layout to display 2 text views, one consisting
+        of names and the other displaying their mac ids-->
+    <Button
+        android:id="@+id/btnGet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Paired Devices" />
+
+    <RelativeLayout
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <!--Paired devices name-->
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--Paired devices mac ID-->
+        <TextView
+            android:id="@+id/macAddressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/nameTv" />
+
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/btnGet"
+        android:text="start bluetooth" />
+</RelativeLayout>

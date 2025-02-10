@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266013877419",
+    "project_id": "mymap-a31dc",
+    "storage_bucket": "mymap-a31dc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266013877419:android:873b4a040fd4f9efe743ee",
+        "android_client_info": {
+          "package_name": "com.phycaresolutions.mymap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV0XQouw3OLtIDciygyMadnnoVBWiLhF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
