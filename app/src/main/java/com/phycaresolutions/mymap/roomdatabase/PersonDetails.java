@@ -14,7 +14,8 @@ public class PersonDetails {
     @ColumnInfo(name = "password")
     private String password;
 
-    public PersonDetails(String username, String password) {
+    public PersonDetails(int id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
     }

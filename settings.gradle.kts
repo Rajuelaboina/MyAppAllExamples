@@ -14,6 +14,9 @@ pluginManagement {
     }
     plugins {
         kotlin("jvm") version "1.9.23"
+        //alias(libs.plugins.google.gms.google.services)
+        //  alias(libs.plugins.google.gms.google.services)
+        // alias(libs.plugins.jetbrains.kotlin.android)
         //alias(libs.plugins.jetbrains.kotlin.android)
         // alias(libs.plugins.jetbrains.kotlin.android)
         //alias(libs.plugins.jetbrains.kotlin.android)

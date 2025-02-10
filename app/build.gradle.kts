@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -56,6 +57,7 @@ android {
         }
     }
 
+
     /* productFlavors {
 
 
@@ -91,6 +93,7 @@ dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.work.runtime)
     implementation(libs.play.services.ads)
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -106,8 +109,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-   // implementation("com.squareup.okhttp3:logging-interceptor:3.4.1")
- //   implementation("com.squareup.okhttp3:okhttps:3.4.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.4.1")
+ //  implementation("com.squareup.okhttp3:okhttps:3.4.1")
     implementation("com.google.code.gson:gson:2.11.0:")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     //implementation (files('libs/loginwithlinkedin-release.aar'))
@@ -122,9 +125,16 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
-   // implementation("com.android.volley:volley:1.2.1")
+   implementation("com.android.volley:volley:1.2.1")
 
     // Room data Base
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+
+ /*   implementation("com.google.firebase:firebase-admin:9.1.1")
+    implementation("com.google.auth:google-auth-library-credentials:0.24.0")*/
+    //implementation("com.google.firebase:firebase-admin:9.2.0")
+    //implementation("org.apache.httpcomponents:httpclient:4.5.4")
+
+
 }

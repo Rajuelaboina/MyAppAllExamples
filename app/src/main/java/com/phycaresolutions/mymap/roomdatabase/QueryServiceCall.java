@@ -1,5 +1,6 @@
 package com.phycaresolutions.mymap.roomdatabase;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -9,20 +10,22 @@ import androidx.room.Update;
 import java.util.List;
 
 @Dao
-public interface ApiService {
+public interface QueryServiceCall {
 
   @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertData(PersonDetails details);
 
+ /* @Query("SELECT * FROM person")
+  LiveData<List<PersonDetails> getDetails();*/
   @Query("SELECT * FROM person")
-   List<PersonDetails> getDetails();
+  LiveData<List<PersonDetails>> getData();
 
   @Update
   void updateData(PersonDetails details);
 
  //delete
   @Query("DELETE FROM person WHERE id = :id")
-  void  deleteUser(String id);
+  int  deleteUser(String id);
 
   //  payment table  -- ///
  /* @Insert(onConflict = OnConflictStrategy.REPLACE)
