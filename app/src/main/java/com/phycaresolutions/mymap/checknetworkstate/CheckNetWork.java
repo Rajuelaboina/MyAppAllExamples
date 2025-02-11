@@ -1,16 +1,11 @@
-package com.phycaresolutions.mymap.utility;
-
-import static androidx.core.content.ContextCompat.getSystemService;
+package com.phycaresolutions.mymap.checknetworkstate;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
-import android.net.NetworkRequest;
 import android.os.Build;
-
-import androidx.annotation.NonNull;
 
 public class CheckNetWork {
 

@@ -13,7 +13,7 @@ import com.phycaresolutions.mymap.R;
 import com.phycaresolutions.mymap.restfull.ApiService;
 import com.phycaresolutions.mymap.restfull.Details;
 import com.phycaresolutions.mymap.restfull.ServiceInstance;
-import com.phycaresolutions.mymap.utility.CheckNetWork;
+import com.phycaresolutions.mymap.checknetworkstate.CheckNetWork;
 
 import java.util.ArrayList;
 import java.util.Timer;

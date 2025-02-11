@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/chip_background_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:drawable="@drawable/chip_selected_background" />  <!-- When selected -->
+    <item android:drawable="@drawable/chip_unselected_background" />  <!-- Default state -->
+</selector>
