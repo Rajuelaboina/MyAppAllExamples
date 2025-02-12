@@ -16,6 +16,7 @@
     <color name="red">#F31606</color>
     <color name="ash">#F31606</color>
     <color name="one">#BFBFBF</color>
+    <color name="orderText">#749F41</color>
 
     <!--<color name="slidemenu_item_selected" tools:ignore="ReferenceType">@drawable/drawer_item</color>
     <color name="checkbox_filter_tint" tools:ignore="ReferenceType">@drawable/checkbox_filter_tint</color>-->

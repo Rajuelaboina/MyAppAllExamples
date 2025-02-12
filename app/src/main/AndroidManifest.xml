@@ -62,7 +62,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".buttonsegmentandchip.ButtonSegmentAndChipMainActivity"
+            android:name=".odertracking.OrderTrackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderTrakingMainActivity2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,13 +74,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".bluetooth.BlueToothMainActivity"
+            android:name=".buttonsegmentandchip.ButtonSegmentAndChipMainActivity"
             android:exported="true">
-           <!-- <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".bluetooth.BlueToothMainActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".wifi.WifiMainActivity"
