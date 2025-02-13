@@ -177,11 +177,11 @@
         <activity
             android:name=".tablayout.UserTabLayoutActivity"
             android:exported="true" >
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".slideNavigation.SlideNavActivity2"
@@ -512,7 +512,13 @@
             android:theme="@style/Theme.MyMap" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".map.MapsActivity"
             android:exported="true"
