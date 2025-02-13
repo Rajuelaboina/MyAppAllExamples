@@ -127,3 +127,107 @@
     </style>
 
 </resources>
+
+
+
+<!--
+<resources xmlns:tools="http://schemas.android.com/tools">
+&lt;!&ndash; Base application theme. &ndash;&gt;
+<style name="Base.Theme.FInal_Task" parent="Theme.Material3.DayNight">
+    &lt;!&ndash; Customize your light theme here. &ndash;&gt;
+
+    <item name="android:windowDisablePreview">true</item>
+
+    &lt;!&ndash;<item name="colorPrimary">#FF0000</item>
+    <item name="colorSecondary">#DD0000</item>
+    <item name="colorSurface">#4EB652</item>&ndash;&gt;
+    &lt;!&ndash; On newer API levels, hide shadows while keeping elevation. &ndash;&gt;
+    <item name="android:outlineAmbientShadowColor" tools:ignore="NewApi">@android:color/transparent</item>
+    <item name="android:outlineSpotShadowColor" tools:ignore="NewApi">@android:color/transparent</item>
+
+    <item name="colorPrimary">@color/purple_200</item>
+    <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+    <item name="toolbarStyle">@style/Theme.Custom.Toolbar</item>
+</style>
+<style name="Theme.Custom.Toolbar" parent="Widget.Material3.Toolbar">
+    <item name="android:background">?android:attr/windowBackground</item>
+    <item name="elevationOverlayEnabled">false</item>
+</style>
+<style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+    <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+</style>
+
+<style name="ThemeOverlay.App.BottomNavigationView" parent="">
+    <item name="colorSurface">@color/purple_200</item>
+    <item name="colorOnSurfaceVariant">@color/purple_500</item>
+</style>
+
+
+
+
+<style name="Theme.FInal_Task" parent="Base.Theme.FInal_Task" />
+
+<style name="NoActionBarTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+</style>
+
+
+<style name="circleImageView" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">50%</item>
+</style>
+
+&lt;!&ndash;<style name="btnStyle" parent="Widget.MaterialComponents.Button">
+    <item name="android:textColor">@color/white</item>
+    <item name="android:background">@drawable/btn_background</item>
+    <item name="android:textStyle">bold</item>
+</style>&ndash;&gt;
+
+<style name="MyToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+    <item name="titleTextColor">@color/white</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+</style>
+
+<style name="MyFab" parent="@style/Widget.MaterialComponents.FloatingActionButton">">
+    &lt;!&ndash;<item name="backgroundTint">#00f</item>&ndash;&gt;
+    &lt;!&ndash; color used by the icon &ndash;&gt;
+    &lt;!&ndash;<item name="tint">@color/white</item>&ndash;&gt;
+    <item name="materialThemeOverlay">@style/Mythemeoverlay</item>
+</style>
+
+<style name="Mythemeoverlay">
+    <item name="colorSecondary">@color/colorAccent</item>
+    <item name="colorOnSecondary">@color/white</item>
+</style>
+
+<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+<style name="Theme.MyMap" parent="Base.Theme.FInal_Task" />
+
+&lt;!&ndash; <style name="splashScreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+     <item name="android:windowBackground">@drawable/circle</item>
+ </style>&ndash;&gt;
+
+&lt;!&ndash; <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+     <item name="boxStrokeColor">@color/border_bg</item>
+     <item name="boxStrokeWidth">2dp</item>
+     <item name="hintTextColor">@color/bg</item>
+     <item name="boxCornerRadiusTopStart">20dp</item>
+     <item name="boxCornerRadiusTopEnd">20dp</item>
+     <item name="boxCornerRadiusBottomEnd">20dp</item>
+     <item name="boxCornerRadiusBottomStart">20dp</item>
+     <item name="placeholderTextColor">@color/bg</item>
+     <item name="placeholderText">*Required</item>
+     <item name="helperTextTextColor">@color/red</item>
+     <item name="helperTextTextAppearance">?android:attr/textAppearanceMedium</item>
+ </style>&ndash;&gt;
+
+<style name="NavButtonPadding" parent="@android:style/Widget.ActionButton">
+    <item name="android:paddingStart">10dp</item>
+    <item name="android:paddingEnd">10dp</item>
+    <item name="android:minWidth">10dp</item>
+</style>
+</resources>-->

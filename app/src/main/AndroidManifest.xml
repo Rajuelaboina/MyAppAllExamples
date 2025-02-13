@@ -65,13 +65,13 @@
             android:name=".odertracking.OrderTrackActivity"
             android:exported="false" />
         <activity
-            android:name=".OrderTrakingMainActivity2"
+            android:name=".ordertrckingnew.OrderTrakingMainActivity2"
             android:exported="true">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".buttonsegmentandchip.ButtonSegmentAndChipMainActivity"
@@ -176,7 +176,13 @@
             android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".tablayout.UserTabLayoutActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".slideNavigation.SlideNavActivity2"
             android:exported="true">
