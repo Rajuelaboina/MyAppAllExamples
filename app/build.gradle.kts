@@ -94,6 +94,8 @@ dependencies {
     implementation(libs.work.runtime)
     implementation(libs.play.services.ads)
     implementation(libs.firebase.messaging)
+    implementation(libs.generativeai)
+    implementation(libs.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -135,5 +137,5 @@ dependencies {
     implementation("com.google.auth:google-auth-library-credentials:0.24.0")*/
     //implementation("com.google.firebase:firebase-admin:9.2.0")
     //implementation("org.apache.httpcomponents:httpclient:4.5.4")
-
+    implementation("com.google.ai.generativelanguage:generativelanguage:0.1.0")
 }

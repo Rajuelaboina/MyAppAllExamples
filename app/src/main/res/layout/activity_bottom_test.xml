@@ -17,7 +17,10 @@
         tools:ignore="MissingConstraints"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"/>
+        android:background="?android:attr/windowBackground"
+        />
+    <!--app:itemIconTint="@drawable/nav_item_color_state"
+    app:itemTextColor="@drawable/nav_item_color_state"-->
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_main"
