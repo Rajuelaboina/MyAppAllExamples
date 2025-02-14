@@ -26,6 +26,7 @@ googleGmsGoogleServices = "4.4.2"
 firebaseMessaging = "24.1.0"
 generativeai = "0.9.0"
 common = "0.10.0"
+material3Android = "1.3.1"
 
 
 
@@ -58,6 +59,7 @@ play-services-ads = { group = "com.google.android.gms", name = "play-services-ad
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
 generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "generativeai" }
 common = { group = "com.google.ai.client.generativeai", name = "common", version.ref = "common" }
+material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
